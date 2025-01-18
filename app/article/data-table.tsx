@@ -64,7 +64,7 @@ export function DataTable<TData, TValue>({
                 data-state={row.getIsSelected() && 'selected'}
                 onClick={() => {
                   // @ts-ignore
-                  const articleId = row.original._id;
+                  const articleId = row.original.id;
                   if (articleId) {
                     router.push(`/article/${articleId}`);
                   }
