@@ -85,14 +85,14 @@ const Result = () => {
         </CardHeader>
         <CardContent>
           {isPending && <SkeletonCard />}
-          {!isPending && !isError && data && data.data.reply && (
+          {!isPending && !isError && data && data.data && (
             <div>
               <div className='flex space-x-1 items-center py-1'>
                 <TextQuote className='h-5 w-4' />
                 <p>Answer</p>
               </div>
               <Card className='bg-zinc-50 my-1 p-4'>
-                <div>{data.data.reply}</div>
+                <div>{data.data}</div>
               </Card>
             </div>
           )}

@@ -8,9 +8,9 @@ const config: AxiosRequestConfig = {
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 };
 
-export const aiSearch = async (msg: string) => {
+export const aiSearch = async (text: string) => {
   try {
-    const response = await axios.post("/chat", { msg }, config);
+    const response = await axios.get(`/rag-chat?text=${text}`, config);
     console.log(response.data);
     return response.data;
   } catch (error) {
